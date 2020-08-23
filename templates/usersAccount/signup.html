@@ -1,0 +1,20 @@
+{% extends "usersAccount/base.html" %}
+{% block body_block %}
+    <div class="jumbotron">
+        {% if signUp %}
+        <h1> Thanks for sign up</h1>
+
+        {%else%}
+        <h1>Register Here</h1>
+        <form enctype="multipart/form-data" method="POST" >
+            {% csrf_token %}
+            {{user_form_p}}
+            {{profile_form_p}}
+            <input type="submit" class="btn btn-primary" value="Sign Up">
+
+        </form>
+        {%endif%}
+
+
+    </div>
+{% endblock %}
