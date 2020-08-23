@@ -1,10 +1,11 @@
-from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from usersAccount import views
 
+# SET THE NAMESPACE!
 app_name = 'usersAccount'
 
-urlpatterns = [
-    path('/',views.index,name='index'),
-    path('admin/', admin.site.urls),
+# Be careful setting the name to just /login use userlogin instead!
+urlpatterns=[
+    path('signup/', views.signup, name='signup'),
+    #path('user_login/',views.user_login,name='user_login'),
 ]
