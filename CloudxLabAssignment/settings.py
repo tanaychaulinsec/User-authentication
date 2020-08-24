@@ -90,17 +90,12 @@ DATABASES = {
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
-    'accounts.hashers.PBKDF2WrappedSHA1PasswordHasher',
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
     'django.contrib.auth.hashers.Argon2PasswordHasher',
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
     'django.contrib.auth.hashers.BCryptPasswordHasher',
-    'django.contrib.auth.hashers.SHA1PasswordHasher',
-    'django.contrib.auth.hashers.MD5PasswordHasher',
-    'django.contrib.auth.hashers.UnsaltedSHA1PasswordHasher',
-    'django.contrib.auth.hashers.UnsaltedMD5PasswordHasher',
-    'django.contrib.auth.hashers.CryptPasswordHasher',
+    
 ]
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -146,4 +141,4 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
-LOGIN_URL = '/usersAccount/'
+LOGIN_URL = '/usersAccount/user_login/'
