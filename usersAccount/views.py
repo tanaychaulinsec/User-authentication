@@ -14,6 +14,7 @@ def signup(request):
     
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
+            
             # hashing the password
             user.set_password(user.password)
             user.save()
@@ -21,12 +22,6 @@ def signup(request):
             profile = profile_form.save(commit=False)
             #oneToOne relation with User models
             profile.user = user
-
-            #to store profile picture
-            if 'profile_pic' in request.FILES:
-                profile.profile_pic = request.FILES['profile_pic']
-            
-            profile.save()
 
             registered=True
         else:
