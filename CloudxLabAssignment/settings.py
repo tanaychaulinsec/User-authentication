@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'usersAccount',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -141,4 +142,4 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
-LOGIN_URL = '/usersAccount/user_login/'
+LOGIN_URL = '/account/login/'

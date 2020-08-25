@@ -1,6 +1,15 @@
 {% extends "usersAccount/base.html" %}
 {% block title %}User SignUp{% endblock %}
 {% block body_block %}
+<style>
+    .errorlist{
+        list-style-type: None;
+        color: red;
+        font-size: 10px;
+        margin: 0;
+        padding: 0;
+    }
+</style>
     <div class="jumbotron">
         {% if registered %}
         <h1> Thanks for sign up</h1>
