@@ -1,6 +1,5 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from usersAccount.forms import UserForm, UserProfileInfoForm
-
 from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
@@ -38,7 +37,7 @@ def signup(request):
             profile = profile_form.save(commit=False)
             #oneToOne relation with User models
             profile.user = user
-
+            profile.save()
             registered=True
         else:
             print(user_form.errors, profile_form.errors)
@@ -64,8 +63,7 @@ def user_login(request):
             if user.is_active:
                 # Log the user in.
                 login(request,user)
-                # Send the user back to some page.
-                # In this case their homepage.
+                # Send the user back to some page like profile page
                 return redirect('profile')
             else:
                 # If account is not active:
