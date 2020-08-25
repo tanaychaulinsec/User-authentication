@@ -6,7 +6,7 @@ An example of Django project with basic user functionality.
 
 | Signup | User Already Exist | After Signup |
 | -------|--------------|-----------------|
-| <img src="./screenshots/signUp.PNG" width="200"> | <img src="./screenshots/usernameAlreadyexists.PNG"" width="200"> | <img src="./screenshots/aftersignup.PNG" width="200"> |
+| <img src="./screenshots/signUp.PNG" width="200"> | <img src="./screenshots/usernameAlreadyexists.PNG" width="200"> | <img src="./screenshots/aftersignup.PNG" width="200"> |
 
 | login | After Logged in | Home |
 | ---------------|------------------|-----------------|
