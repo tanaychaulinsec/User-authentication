@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from usersAccount.forms import UserForm, UserProfileInfoForm
 from django.contrib.auth import authenticate,login,logout
+from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 # Create your views here.
@@ -11,7 +12,7 @@ def index(request):
 
 @login_required
 def profile(request):
-    return render(request,"usersAccount/profile.html")
+    return render(request,"usersAccount/profile.html",{})
 
 
 @login_required
@@ -64,15 +65,18 @@ def user_login(request):
                 # Log the user in.
                 login(request,user)
                 # Send the user back to some page like profile page
-                return redirect('profile')
+                messages.info(request,"Hi "+username+",")
+                return render(request, 'usersAccount/profile.html', {})
             else:
                 # If account is not active:
-                return HttpResponse("Your account is not active.")
+                messages.info(request,"Your account is not active")
+                return render(request, 'usersAccount/login.html', {})
         else:
-            print("Someone tried to login and failed.")
-            print("They used username: {} and password: {}".format(username,password))
-            return HttpResponse("Invalid login details supplied.")
+            #if Username OR password is incorrect
+            messages.info(request,"Username OR password is incorrect")
+            return render(request, 'usersAccount/login.html', {})
 
     else:
         #Nothing has been provided for username or password.
+        messages.info(request,"Username OR password can't be blank")
         return render(request, 'usersAccount/login.html', {})

@@ -1,6 +1,11 @@
 {% extends "usersAccount/base.html" %}
 {% block title %}User Login!{% endblock %}
 {% block body_block %}
+<style>
+    p{
+        color: red;
+    }
+</style>
 <div class="jumbotron">
     <h1>Please Login</h1>
     <form class="form-group" action="{% url 'usersAccount:login' %}" method="POST">
@@ -13,6 +18,9 @@
         <p></p>
         <input type="submit" class="btn btn-primary" value="Login">
     </form>
+    {% for message in messages %}
+        <p id="message">{{message}}</p>
+    {% endfor %}
     
 </div>
 {% endblock %}

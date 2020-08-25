@@ -2,7 +2,11 @@
 {% block title %}User Profile!{% endblock %}
 {% block body_block %}
     <div class="jumbotron">
-        <h1> Welcome you are logged in successfully  </h1>
+        
+        {% for message in messages %}
+            <h1 id="message">{{message}}</h1>
+        {% endfor %}
+        <h2> Welcome you are logged in successfully  </h2>
 
     </div>
 {% endblock %}
