@@ -48,15 +48,17 @@ $ echo "export WORKON_HOME=~/Env" >> ~/.bashrc
 $ echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
 ```
 ### Now, source your shell initialization script so that you can use this functionality in your current session:
-
+```
 $ source ~/.bashrc
+```
+
 ### You should now have directory called Env in your home folder which will hold virtual environment information.
 
 ## Create Django Projects
 #### Now that we have our virtual environment tools, we will create two virtual environments, install Django in each, and start two projects.
 
 ### Create the First Project
-### We can create a virtual environment easily by using some commands that the virtualenvwrapper script makes available to us.
+#### We can create a virtual environment easily by using some commands that the virtualenvwrapper script makes available to us.
 
 ### Create your first virtual environment with the name of your first site or project by typing:
 ```
@@ -94,8 +96,10 @@ $ mkvirtualenv firstsite
 (firstsite) $ ~/CloudxLabAssignment/manage.py migrate
 ```
 
-### I already created a superuser with this credential username:'tanay' password:'Test@1234' or you can create your own by using below script
+#### I already created a superuser with this credential username:'tanay' password:'Test@1234' or you can create your own by using below script
+```
 (firstsite) $ ~/CloudxLabAssignment/manage.py createsuperuser
+```
 
 ### Now run the server and check 
 
