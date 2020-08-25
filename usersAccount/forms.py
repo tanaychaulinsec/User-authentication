@@ -29,5 +29,5 @@ class UserProfileInfoForm(forms.ModelForm):
         model = UserProfileInfo
         fields = ('phone_number',)
         widgets = {
-            'phone_number': forms.TextInput(attrs={'class': 'form-control','placeholder':'Enter your phone number'})
+            'phone_number': forms.TextInput(attrs={'class': 'form-control','placeholder':'Enter your phone number'}),
         }
